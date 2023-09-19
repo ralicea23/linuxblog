@@ -1,0 +1,61 @@
+baseURL = ""
+title = "New Linux User"
+theme = "m10c"
+paginate = 8
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "the journey"
+    name = "The Journey"
+    url = "/the-journey/"
+    weight = 2
+   [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight =  4
+  [[menu.main]]
+    identifier = "linux news"
+    name = "Linux News"
+    url = "/linux-news/"
+    weight = 3
+    [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 5
+    
+[params]
+  author = "Robert Alicea"
+  avatar = "img/rob.jpg"
+  description = "Linux from a noob perspective"
+  menu_item_separator = " - "
+  [[params.social]]
+    icon = "github"
+    name = "Github"
+    url = "https://github.com/snowman1313"
+  #[[params.social]]
+  # icon = "twitter"
+  #  name = "Twitter"
+  #  url = "https://twitter.com/gohugoio"
+
+   # Default theme
+  [params.style]
+    darkestColor = "#242930"
+    darkColor = "#353b43"
+    lightColor = "#afbac4"
+    lightestColor = "#ffffff"
+    primaryColor = "#57cc8a"
+
+  # Green theme
+  #[params.style]
+  #  darkestColor = "#315659"
+  #  darkColor = "#253031"
+  #  lightColor = "#96a879"
+  #  lightestColor = "#fff"
+  #  primaryColor = "#dad865"
