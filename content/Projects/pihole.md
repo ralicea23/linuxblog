@@ -1,53 +1,81 @@
 ---
 author: "Rob Alicea"
-title: "Pi-hole"
-date: "2023-02-04"
+title: "A Beginner's Guide to Setting Up Pi-hole with Unbound for Ad Blocking and Enhanced Privacy"
+date: "2023-09-19"
 ShowReadingTime: True
-tags: ["pi-hole", "ssh", "dns"] 
+tags: ["pi-hole", "security", "dns"] 
     
 ---
 
 ![New Linux User](/img/4.png)
 
-# Pi-hole: A Comprehensive Guide to Blocking Ads on Your Network
+# Introduction:
 
-Are you tired of being bombarded with irrelevant ads while browsing the web? Want to take control of your internet experience and block unwanted ads? Then Pi-hole is the answer you’re looking for.
+Are you tired of annoying ads cluttering your web browsing experience and concerned about your online privacy? Pi-hole with Unbound might be the solution you've been looking for. In this beginner's guide, we'll walk you through the step-by-step process of setting up Pi-hole with Unbound on your Raspberry Pi or any other compatible device.
+What is Pi-hole and Unbound?
 
-### What is Pi-hole?
+Pi-hole is a network-level ad blocker that helps you eliminate unwanted advertisements and trackers from all devices on your network. It acts as a DNS (Domain Name System) sinkhole, which means it intercepts requests to known ad-serving domains and prevents them from loading.
 
-Pi-hole is a free and open-source software that acts as a DNS server to block ads, trackers, and malicious websites. It’s designed to run on a Raspberry Pi, but can also be installed on other Linux-based systems. With Pi-hole, you can enjoy an ad-free internet experience on all your devices connected to the same network.
+Unbound, on the other hand, is a powerful DNS resolver that enhances your privacy by securely resolving DNS queries locally, without relying on third-party DNS servers. When combined with Pi-hole, it provides an extra layer of privacy and security.
+Prerequisites:
+    - Hardware: You'll need a Raspberry Pi (any model should work) or a           compatible device to install Pi-hole and Unbound.
+    - Operating System: Install Raspberry Pi OS or any other compatible Linux distribution on your device.
+    - A Static IP Address: Assign a static IP address to your Raspberry Pi to ensure stable DNS resolution.
+    - Basic Command Line Skills: Familiarity with basic Linux terminal commands will be helpful.
 
-### How does Pi-hole work?
+# Step 1: Install Pi-hole
 
-The Pi-hole works by intercepting and blocking the DNS queries made by your devices. When you enter a website’s URL into your browser, your device sends a DNS query to your router, which then forwards it to your internet service provider’s DNS server. The Pi-hole acts as a local DNS server that sits between your router and your devices, intercepting the DNS queries before they reach the internet. It then blocks the requests for ads and trackers, ensuring that your devices never receive the ads or other unwanted content.
-
-### Benefits of using Pi-hole:
+Update your system: Open a terminal and run the following commands:
+```   
+sudo apt update
+sudo apt upgrade
 ```
-- Ad-Free Browsing Experience: Pi-hole blocks ads, pop-ups, and banners, giving you a clean and clutter-free browsing experience.
-
-- Increased Privacy: Pi-hole blocks trackers, which are used to track your online activities and personalize ads. With Pi-hole, your online activities remain private.
-
-- Improved Network Performance: Blocking unwanted ads and trackers can improve your network’s speed and performance.
-
-- Easy to Use: Pi-hole has a user-friendly web interface that makes it easy to manage and configure.
+# Install Pi-hole: Run the following command and follow the on-screen instructions to install Pi-hole:
 ```
-### How to Install Pi-hole
-
-Installing Pi-hole is easy, and it takes only a few minutes. You can install it on a Raspberry Pi, or on any other Linux-based system. Here’s how to do it:
+curl -sSL https://install.pi-hole.net | bash
 ```
-- Download the Pi-hole software from the official website.
+Configure Pi-hole: During the installation, you'll be prompted to set a password and choose your upstream DNS provider. You can either use the default or select one that suits your needs.
 
-- Follow the installation instructions for your operating system.
+Note down your Admin Console URL: After the installation is complete, make sure to note down your Pi-hole Admin Console URL. It will look something like http://pi.hole/admin.
 
-- Configure your router to use Pi-hole as the DNS server.
+# Step 2: Configure Your Router
 
-- Start using Pi-hole and enjoy an ad-free internet experience.
+To ensure all devices on your network use Pi-hole for DNS resolution, log in to your router's settings and set the DNS server to the static IP address of your Raspberry Pi.
+
+# Step 3: Install Unbound
+
+Install Unbound: Open a terminal and run the following command to install Unbound:
 ```
-In conclusion, Pi-hole is a powerful and easy-to-use tool that blocks ads and protects your privacy on the web. With Pi-hole, you can take control of your internet experience and enjoy a cleaner, faster, and more private online experience.
+sudo apt install unbound
+```
+# Configure Unbound: Edit the Unbound configuration file by running:
+```
+sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
+```
+Add the following lines to the file:
+```
+server:
+   do-not-query-localhost: no
+   interface: 127.0.0.1
+   access-control: 192.168.1.0/24 allow
+```
+Replace 192.168.1.0/24 with your local network's CIDR notation.
 
+Restart Unbound: Restart the Unbound service to apply the changes:
+```
+    sudo service unbound restart
+```
+# Step 4: Test Your Setup
 
+Test Pi-hole: Open a web browser and visit any website with ads. You should notice a significant reduction in ad content.
 
+Check Unbound: Verify that Unbound is working by running the following command:
+```
+    dig @127.0.0.1 example.com
+```
+You should see a response from your local Unbound DNS resolver.
 
+Congratulations! You've successfully set up Pi-hole with Unbound, enhancing your online privacy and blocking ads across your entire network. Enjoy a faster, cleaner, and more secure browsing experience. Remember to periodically update Pi-hole's blocklists for the best ad-blocking performance.
 
 ![New Linux User](/img/logo1.svg)
 
