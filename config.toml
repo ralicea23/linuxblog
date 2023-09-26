@@ -10,9 +10,9 @@ paginate = 8
     url = "/"
     weight = 1
   [[menu.main]]
-    identifier = "the journey"
-    name = "The Journey"
-    url = "/the-journey/"
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
     weight = 2
    [[menu.main]]
     identifier = "projects"
@@ -20,9 +20,9 @@ paginate = 8
     url = "/projects/"
     weight =  4
   [[menu.main]]
-    identifier = "linux news"
-    name = "Linux News"
-    url = "/linux-news/"
+    identifier = "news"
+    name = "News"
+    url = "/news/"
     weight = 3
     [[menu.main]]
     identifier = "tags"
@@ -31,7 +31,7 @@ paginate = 8
     weight = 5
     
 [params]
-  author = "Robert Alicea"
+  author = "Rob Alicea"
   avatar = "img/rob.jpg"
   description = "Linux from a newcomer's standpoint"
   menu_item_separator = " - "

@@ -101,4 +101,4 @@ It may take a few minutes for your site to become live.
 
 Congratulations! You've created a static website with Hugo and hosted it on GitHub. Now you can continue adding content and customizing your site as needed.
 
-![New Linux User](/img/logo1.svg)
+![New Linux User](/img/logo.svg)

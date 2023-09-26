@@ -3,7 +3,7 @@ author: "Rob Alicea"
 title: "Exploring Kasm Self-Hosted: Empowering New Linux Users"
 date: "2023-09-22"
 ShowReadingTime: True
-tags: [privacy", "security"]
+tags: ["privacy", "security", "hugo"]
     
 ---
 
@@ -36,6 +36,6 @@ Kasm Self-Hosted is a fantastic project for new Linux users, offering a simplifi
   
     
   
-![New Linux User](/img/logo1.svg)
+![New Linux User](/img/logo.svg)
 
 

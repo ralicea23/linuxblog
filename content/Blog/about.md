@@ -25,4 +25,4 @@ I owe my transition to Linux to two YouTubers: DistroTube and Chris Titus, who p
 
 
 
-![New Linux User](/img/logo1.svg)
+![New Linux User](/img/logo.svg)

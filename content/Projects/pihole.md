@@ -77,6 +77,6 @@ You should see a response from your local Unbound DNS resolver.
 
 Congratulations! You've successfully set up Pi-hole with Unbound, enhancing your online privacy and blocking ads across your entire network. Enjoy a faster, cleaner, and more secure browsing experience. Remember to periodically update Pi-hole's blocklists for the best ad-blocking performance.
 
-![New Linux User](/img/logo1.svg)
+![New Linux User](/img/logo.svg)
 
 

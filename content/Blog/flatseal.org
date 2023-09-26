@@ -1,0 +1,52 @@
+---
+title: Resolving Zoom Screen Sharing and Custom Backgrounds
+date: "2023-09-24"
+description: Flat-seal a quick solution to fix flat-packs permissions
+tags:
+- linux
+- flatpacks
+- terminal
+- network
+ShowReadingTime: True
+---
+
+[[file:/img/flatseal4.png]]
+
+If you've found your way here, you might be facing the same challenges I did with Zoom on Linux. Don't worry; I've got the perfect solution for you, and it's called Flatseal. This incredible tool not only resolved my Zoom screen sharing and custom background issues but also made configuring applications from Flathub a breeze.
+
+* The Quest to Optimize Zoom on Linux
+
+As a tech enthusiast who frequently relies on Zoom for meetings and collaboration, I encountered two significant hurdles when using the Flatpak version of Zoom. Firstly, screen sharing wasn't working as expected, and secondly, I couldn't figure out how to add custom backgrounds to enhance my video calls.
+
+* Flatseal: Your All-in-One Configuration Solution
+
+Enter Flatseal – a remarkable application that transformed my Linux experience. Flatseal empowers users to manage and customize permissions and settings for Flatpak applications, including those from Flathub. With its user-friendly interface, it simplifies the process of fine-tuning app behavior without the need for complex command-line instructions.
+
+* Resolution: Screen Sharing and Custom Backgrounds
+
+** Here's how I used Flatseal to resolve both the screen sharing and custom background issues in Zoom:
+
+- Installing Flatseal: If you haven't already, install Flatseal from Flathub using your preferred package manager. Simply search for "Flatseal" and click to install.
+- Launching Flatseal: After installation, open Flatseal. You'll be greeted with a list of installed Flatpak apps.
+- Selecting Zoom: Scroll down and find "Zoom" in the list of applications. Click on it to select it.
+- Configuring Permissions: In the Zoom configuration window, navigate to the permissions tab. Ensure that the camera, microphone, and screen recording permissions are all enabled. This will resolve the screen sharing issue.
+- Custom Backgrounds: To add custom backgrounds, navigate to the Miscellaneous tab within Flatseal. Make sure the "Access to user's images" permission is enabled. Now you can easily set your desired background during Zoom meetings.
+- Apply Changes: After making these necessary adjustments, click the "Apply" button to save your changes.
+
+* Here is my configuration
+
+[[file:/img/flatseal1.png]]
+
+[[file:/img/flatseal2.png]]
+
+[[file:/img/flatseal3.png]]
+
+* Why I Love Flatseal
+
+As a tech enthusiast who loves learning the hard way, I appreciate the value of mastering the command line. However, Flatseal was a game-changer because it saved me precious time and ensured I could fix these Zoom issues quickly, allowing me to join my Zoom conferences on time. While I'm always up for a challenge, having Flatseal in my Linux toolkit proved invaluable.
+
+Whether you prefer the command line or a user-friendly GUI, Flatseal empowers you to take control of your Flathub apps and personalize them to your liking.
+
+So, fellow Linux explorers, embrace the power of Flatseal and make your Linux experience truly yours. Bid farewell to Zoom issues and unleash your creativity with custom backgrounds.
+
+[[file:/img/logo.svg]]
